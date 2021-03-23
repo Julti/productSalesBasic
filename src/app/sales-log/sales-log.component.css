@@ -1,0 +1,60 @@
+.container{
+    padding: 1em;
+}
+form input{
+    display: block;
+
+}
+form{
+    padding:1em;
+}
+form .button{
+    margin-top: 1em;
+    background-color: #E63F5B;
+    color:  #F7FFF7;
+    padding:0.5em;
+    border-radius: 0.5em;
+    width:fit-content;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@100;300&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.table{
+    font-family: 'Roboto','Sans serif';
+    font-size: 1em;
+    
+    margin-top: 1em;
+}
+.table thead tr td{
+    background-color: #292F36;
+    color: #F7FFF7;
+    font-weight: bold;
+    padding:0.5em;
+    border-radius: 0.1em;
+}
+.table tbody tr td{
+    padding:0.5em;
+}
+.addition{
+    background-color: #4ECDC4;
+    font-family: 'Roboto','Sans serif';
+    color: #F7FFF7;
+    font-weight: bold;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    vertical-align: middle;
+    text-align: center;
+}
+.button{
+    margin-top: 1em;
+    background-color: #E63F5B;
+    color:  #F7FFF7;
+    padding:0.5em;
+    border-radius: 0.5em;
+    width:fit-content;
+}
+select{
+    width:20em;
+}

@@ -1,0 +1,26 @@
+<table class="table">
+    <thead class="tableHeader">
+        <tr>
+            <td>Producto</td>
+            <td>Precio Unitario</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
+        </tr>
+    </thead>
+    <tbody class="tableBody">
+        <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.unitPrice}}</td>
+            <td class="rightalign"><img src="../assets/imgs/edit.png" (click)="updateProductForm(product)"> </td>
+            <td class="rightalign"><img src="../assets/imgs/can.png" (click)="deleteProduct(product)"></td>
+        </tr>
+    </tbody>
+</table>
+<div class="addition" (click)="enableForm()">
+    +
+</div>
+<form [ngClass]="{'visible' : showForm==true}" [ngClass]="{'notvisible' : showForm==false}">
+    Name: <input type="text" [(ngModel)]="productFocus.name" name="name">
+    UnitPrice: <input type="text" [(ngModel)]="productFocus.unitPrice" name="unitPrice">
+    <div class="button" (click)="saveObject()">Save</div>
+ </form> 

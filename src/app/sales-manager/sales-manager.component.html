@@ -1,0 +1,52 @@
+<div class="container">
+    <label>Cliente a facturar:</label>
+    <select [(ngModel)]="invoice.customerId" name="customerId">
+        <option *ngFor="let customer of customers" id="{{customer.id}}" [ngValue]="customer.id">{{customer.name}} {{customer.lastName}}</option>
+    </select>
+    <div class="selector">
+        <table class="table">
+        <thead class="tableHeader">
+                <tr>
+                    <td>Producto</td>
+                    <td>Cantidad</td>
+                    <td >Precio Unitario</td>
+                    <td>Precio Total</td>
+                    <td>Adicionar</td>
+                </tr>
+            </thead>
+            <tbody class="tableBody">
+                <tr>
+                    <td><select (change)="setCurrentDetail()" [(ngModel)]="currentDetail.productId" name="productId">
+                        <option *ngFor="let product of products" id="{{product.id}}" [ngValue]="product.id">{{product.name}}</option>
+                    </select></td>
+                    <td><div><input type="text" [(ngModel)]="currentDetail.quantity" name="Quantity" (change)="updateTotalPrice()"/></div></td>
+                    <td><p>{{currentDetail.unitPrice}}</p></td>
+                    <td><p>{{currentDetail.totalPrice}}</p></td>
+                    <td><div class="addition" (click)="addDetail()">+</div></td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    <label>Artículos agregados:</label>
+    <table class="table">
+        <thead class="tableHeader">
+            <tr>
+                <td>Producto</td>
+                <td>Cantidad</td>
+                <td >Precio Unitario</td>
+                <td>Precio Total</td>
+            </tr>
+        </thead>
+        <tbody class="tableBody">
+            <tr *ngFor="let detail of invoice.details">
+                <td>{{detail.productId}}</td>
+                <td>{{detail.quantity}}</td>
+                <td>{{detail.unitPrice}}</td>
+                <td>{{detail.totalPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="button" (click)="saveInvoice()">Guardar</div>
+    <div class="button" routerLink="/log" routerLinkActive="active">Log</div>
+</div>

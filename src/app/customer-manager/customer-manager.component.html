@@ -1,0 +1,32 @@
+<table class="table">
+    <thead class="tableHeader">
+        <tr>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Identificación</td>
+            <td>Telefono</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
+        </tr>
+    </thead>
+    <tbody class="tableBody">
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.name}}</td>
+            <td>{{customer.lastName}}</td>
+            <td>{{customer.identification}}</td>
+            <td>{{customer.phone}}</td>
+            <td class="rightalign"><img src="../assets/imgs/edit.png" (click)="updateCustomerForm(customer)"> </td>
+            <td class="rightalign"><img src="../assets/imgs/can.png" (click)="deleteCustomer(customer)"></td>
+        </tr>
+    </tbody>
+</table>
+<div class="addition" (click)="enableForm()">
+    +
+</div>
+<form [ngClass]="{'visible' : showForm==true}" [ngClass]="{'notvisible' : showForm==false}">
+    Nombre: <input type="text" [(ngModel)]="customerFocus.name" name="name">
+    Apellido: <input type="text" [(ngModel)]="customerFocus.lastName" name="lastName">
+    Identificación: <input type="text" [(ngModel)]="customerFocus.identification" name="identification">
+    Telefono: <input type="text" [(ngModel)]="customerFocus.phone" name="phone">
+    <div class="button" (click)="saveObject()">Save</div>
+ </form> 

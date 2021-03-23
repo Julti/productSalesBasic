@@ -1,0 +1,16 @@
+<table class="table">
+    <thead class="tableHeader">
+        <tr>
+            <td>Id Venta</td>
+            <td>Cliente</td>
+            <td >Detalle</td>
+        </tr>
+    </thead>
+    <tbody class="tableBody">
+        <tr *ngFor="let invoice of invoices">
+            <td>{{invoice.id}}</td>
+            <td>{{invoice.customerName}}</td>
+            <td><img src="../assets/imgs/glass.png" width="24px" routerLink="/detail/{{invoice.id}}" routerLinkActive="active"></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+<table class="table">
+    <thead class="tableHeader">
+        <tr>
+            <td>Producto</td>
+            <td>Cantidad</td>
+            <td >Precio Unitario</td>
+            <td >Precio Total</td>
+        </tr>
+    </thead>
+    <tbody class="tableBody">
+        <tr *ngFor="let detail of details">
+            <td>{{detail.productName}}</td>
+            <td>{{detail.quantity}}</td>
+            <td>{{detail.unitPrice}}</td>
+            <td>{{detail.totalPrice}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="button" routerLink="/log" routerLinkActive="active">Volver</div>

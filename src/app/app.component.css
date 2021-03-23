@@ -1,0 +1,13 @@
+
+.contents{
+    display:inline-block;
+    height:100vh;
+    width: 90%;
+    background-color: #F7FFF7;
+}
+.sidebar{
+    width:9%;
+    display:inline-block;
+    vertical-align:top;
+    min-height:45em;
+}
